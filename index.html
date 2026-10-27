@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal & RC Filter Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+  <!-- Left Control Panel -->
+  <div class="panel">
+    <h2>Signal & Circuit Controls</h2>
+    
+    <div class="control-group">
+      <label for="amplitude">Input Amplitude (Vin): <span id="amp-val">5</span> V</label>
+      <input type="range" id="amplitude" min="1" max="10" value="5" step="0.5">
+    </div>
+
+    <div class="control-group">
+      <label for="frequency">Signal Frequency (f): <span id="freq-val">50</span> Hz</label>
+      <input type="range" id="frequency" min="10" max="200" value="50" step="5">
+    </div>
+
+    <div class="control-group">
+      <label for="resistance">Resistor (R): <span id="res-val">1000</span> Ω</label>
+      <input type="range" id="resistance" min="100" max="10000" value="1000" step="100">
+    </div>
+
+    <div class="control-group">
+      <label for="capacitance">Capacitor (C): <span id="cap-val">1.0</span> µF</label>
+      <input type="range" id="capacitance" min="0.1" max="10" value="1" step="0.1">
+    </div>
+
+    <div class="info-box">
+      <p><strong>Cutoff Frequency (fc):</strong> <span id="fc-val">159.15</span> Hz</p>
+      <p><strong>Gain:</strong> <span id="gain-val">0.95</span></p>
+    </div>
+  </div>
+
+  <!-- Right Canvas Screen -->
+  <div class="display-area">
+    <h2>Virtual Oscilloscope Display</h2>
+    <canvas id="oscilloscope" width="600" height="350"></canvas>
+    <div class="legend">
+      <span class="legend-item"><span class="color-box input-color"></span> Input Signal</span>
+      <span class="legend-item"><span class="color-box output-color"></span> Filtered Output</span>
+    </div>
+  </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
